@@ -7,7 +7,12 @@ const Filter = ({ handleInput }) => {
 
   return (
     <Fragment>
-      <input class="center w-50" type="text" onInput={handleFilter} />
+      <input
+        className="pa3 b--green mb2 bg-light-blue ba"
+        type="search"
+        placeholder="Search here"
+        onInput={handleFilter}
+      />
     </Fragment>
   );
 };

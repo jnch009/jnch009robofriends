@@ -30,7 +30,8 @@ class RobotApp extends Component {
   render() {
     return (
       <Fragment>
-        <div class="flex flex-column">
+        <div className="tc flex flex-column items-center">
+          <h1>ROBOFRIENDS</h1>
           <Filter handleInput={this.handleInput} />
           <CardList robots={this.state.robots} />
         </div>
