@@ -1,13 +1,23 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
-import Hello from "./Hello";
 import * as serviceWorker from "./serviceWorker";
 import "tachyons";
+import Card from "./Card";
+import { robots } from "./robots";
 
 ReactDOM.render(
   <React.StrictMode>
-    <Hello greeting={`Hello React Ninja`} />
+    <div>
+      {robots.map((robot) => (
+        <Card
+          key={robot.id}
+          id={robot.id}
+          name={robot.name}
+          email={robot.email}
+        />
+      ))}
+    </div>
   </React.StrictMode>,
   document.getElementById("root")
 );
