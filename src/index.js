@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Fragment } from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 import * as serviceWorker from "./serviceWorker";
@@ -8,7 +8,7 @@ import { robots } from "./robots";
 
 ReactDOM.render(
   <React.StrictMode>
-    <div>
+    <Fragment>
       {robots.map((robot) => (
         <Card
           key={robot.id}
@@ -17,7 +17,7 @@ ReactDOM.render(
           email={robot.email}
         />
       ))}
-    </div>
+    </Fragment>
   </React.StrictMode>,
   document.getElementById("root")
 );
