@@ -5,9 +5,12 @@ import * as serviceWorker from "./serviceWorker";
 import "tachyons";
 import { robots } from "./robots";
 import CardList from "./CardList";
+import Filter from "./Filter";
 
 ReactDOM.render(
   <React.StrictMode>
+    <Filter robots={robots} />
+    <br />
     <CardList robots={robots} />
   </React.StrictMode>,
   document.getElementById("root")
