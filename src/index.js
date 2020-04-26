@@ -1,23 +1,14 @@
-import React, { Fragment } from "react";
+import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 import * as serviceWorker from "./serviceWorker";
 import "tachyons";
-import Card from "./Card";
 import { robots } from "./robots";
+import CardList from "./CardList";
 
 ReactDOM.render(
   <React.StrictMode>
-    <Fragment>
-      {robots.map((robot) => (
-        <Card
-          key={robot.id}
-          id={robot.id}
-          name={robot.name}
-          email={robot.email}
-        />
-      ))}
-    </Fragment>
+    <CardList robots={robots} />
   </React.StrictMode>,
   document.getElementById("root")
 );
