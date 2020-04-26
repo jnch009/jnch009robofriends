@@ -12,13 +12,6 @@ class RobotApp extends Component {
     };
   }
 
-  filterRobots = () =>
-    robots.filter((robot) => {
-      if (robot.name.toLowerCase().includes(this.state.search)) {
-        return robot;
-      }
-    });
-
   handleInput = (input) => {
     this.setState(
       {
@@ -26,7 +19,9 @@ class RobotApp extends Component {
       },
       () => {
         this.setState({
-          robots: this.filterRobots(),
+          robots: robots.filter((robot) =>
+            robot.name.toLowerCase().includes(this.state.search)
+          ),
         });
       }
     );
