@@ -2,7 +2,7 @@ import React, { Fragment } from "react";
 
 const Filter = ({ handleInput }) => {
   const handleFilter = (e) => {
-    handleInput(e.target.value);
+    handleInput(e.target.value.toLowerCase());
   };
 
   return (
