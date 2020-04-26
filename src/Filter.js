@@ -1,17 +1,13 @@
 import React, { Fragment } from "react";
-import CardList from "./CardList";
 
-const Filter = ({ robots }) => {
-  const search = "leanne";
-  const filterRobots = robots.filter((robot) => {
-    if (robot.name.toLowerCase().includes(search)) {
-      return robot;
-    }
-  });
+const Filter = ({ handleInput }) => {
+  const handleFilter = (e) => {
+    handleInput(e.target.value);
+  };
 
   return (
     <Fragment>
-      <CardList robots={filterRobots} />
+      <input class="center w-50" type="text" onInput={handleFilter} />
     </Fragment>
   );
 };

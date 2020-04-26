@@ -6,12 +6,14 @@ import "tachyons";
 import { robots } from "./robots";
 import CardList from "./CardList";
 import Filter from "./Filter";
+import RobotApp from "./RobotApp";
 
 ReactDOM.render(
   <React.StrictMode>
-    <Filter robots={robots} />
+    {/* <Filter robots={robots} />
     <br />
-    <CardList robots={robots} />
+    <CardList robots={robots} /> */}
+    <RobotApp robots={robots} />
   </React.StrictMode>,
   document.getElementById("root")
 );

@@ -3,7 +3,7 @@ import Card from "./Card";
 
 const CardList = ({ robots }) => {
   return (
-    <Fragment>
+    <div class="dib tc">
       {robots.map((robot) => (
         <Card
           key={robot.id}
@@ -12,7 +12,7 @@ const CardList = ({ robots }) => {
           email={robot.email}
         />
       ))}
-    </Fragment>
+    </div>
   );
 };
 
