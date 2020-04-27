@@ -43,7 +43,7 @@ class RobotApp extends Component {
       </div>
     ) : (
       <div className="tc flex flex-column items-center">
-        <h1 className="f1">ROBOFRIENDS</h1>
+        <h1 className="f1-l f2-m f3">ROBOFRIENDS</h1>
         <Filter handleInput={this.handleInput} />
         <Scroll>
           <CardList robots={robotsFiltered} />
