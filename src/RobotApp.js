@@ -13,27 +13,21 @@ class RobotApp extends Component {
   }
 
   handleInput = (input) => {
-    this.setState(
-      {
-        search: input,
-      },
-      () => {
-        this.setState({
-          robots: robots.filter((robot) =>
-            robot.name.toLowerCase().includes(this.state.search)
-          ),
-        });
-      }
-    );
+    this.setState({
+      search: input.target.value.toLowerCase(),
+    });
   };
 
   render() {
+    const robotsFiltered = this.state.robots.filter((robot) =>
+      robot.name.toLowerCase().includes(this.state.search)
+    );
     return (
       <Fragment>
         <div className="tc flex flex-column items-center">
           <h1>ROBOFRIENDS</h1>
           <Filter handleInput={this.handleInput} />
-          <CardList robots={this.state.robots} />
+          <CardList robots={robotsFiltered} />
         </div>
       </Fragment>
     );

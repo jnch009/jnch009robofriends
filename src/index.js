@@ -3,7 +3,6 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import * as serviceWorker from "./serviceWorker";
 import "tachyons";
-import { robots } from "./robots";
 import RobotApp from "./RobotApp";
 
 ReactDOM.render(
@@ -11,7 +10,7 @@ ReactDOM.render(
     {/* <Filter robots={robots} />
     <br />
     <CardList robots={robots} /> */}
-    <RobotApp robots={robots} />
+    <RobotApp />
   </React.StrictMode>,
   document.getElementById("root")
 );
