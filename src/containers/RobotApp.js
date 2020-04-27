@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from "react";
-import Filter from "./Filter";
-import CardList from "./CardList";
-import Scroll from "./Scroll";
+import Filter from "../components/Filter";
+import CardList from "../components/CardList";
+import Scroll from "../components/Scroll";
 import "./RobotApp.css";
 
 //smart component

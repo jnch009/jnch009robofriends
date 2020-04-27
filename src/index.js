@@ -3,13 +3,10 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import * as serviceWorker from "./serviceWorker";
 import "tachyons";
-import RobotApp from "./RobotApp";
+import RobotApp from "./containers/RobotApp";
 
 ReactDOM.render(
   <React.StrictMode>
-    {/* <Filter robots={robots} />
-    <br />
-    <CardList robots={robots} /> */}
     <RobotApp />
   </React.StrictMode>,
   document.getElementById("root")
