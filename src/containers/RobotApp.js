@@ -1,7 +1,10 @@
 import React, { Component } from "react";
-import Filter from "../components/Filter";
+
 import CardList from "../components/CardList";
+import ErrorBoundry from "../components/ErrorBoundry";
+import Filter from "../components/Filter";
 import Scroll from "../components/Scroll";
+
 import "./RobotApp.css";
 
 //smart component
@@ -46,7 +49,9 @@ class RobotApp extends Component {
         <h1 className="f1-l f2-m f3">ROBOFRIENDS</h1>
         <Filter handleInput={this.handleInput} />
         <Scroll>
-          <CardList robots={robotsFiltered} />
+          <ErrorBoundry>
+            <CardList robots={robotsFiltered} />
+          </ErrorBoundry>
         </Scroll>
       </div>
     );
