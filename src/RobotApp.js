@@ -1,6 +1,7 @@
 import React, { Component, Fragment } from "react";
 import Filter from "./Filter";
 import CardList from "./CardList";
+import Scroll from "./Scroll";
 import "./RobotApp.css";
 
 //smart component
@@ -48,7 +49,9 @@ class RobotApp extends Component {
         <div className="tc flex flex-column items-center">
           <h1 className="f1">ROBOFRIENDS</h1>
           <Filter handleInput={this.handleInput} />
-          <CardList robots={robotsFiltered} />
+          <Scroll>
+            <CardList robots={robotsFiltered} />
+          </Scroll>
         </div>
       </Fragment>
     );
