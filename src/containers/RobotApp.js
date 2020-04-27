@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from "react";
+import React, { Component } from "react";
 import Filter from "../components/Filter";
 import CardList from "../components/CardList";
 import Scroll from "../components/Scroll";
@@ -37,24 +37,18 @@ class RobotApp extends Component {
       robot.name.toLowerCase().includes(search)
     );
 
-    if (!robots.length) {
-      return (
-        <div className="flex justify-center items-center vh-75">
-          <h1>Loading</h1>
-        </div>
-      );
-    }
-
-    return (
-      <Fragment>
-        <div className="tc flex flex-column items-center">
-          <h1 className="f1">ROBOFRIENDS</h1>
-          <Filter handleInput={this.handleInput} />
-          <Scroll>
-            <CardList robots={robotsFiltered} />
-          </Scroll>
-        </div>
-      </Fragment>
+    return !robots.length ? (
+      <div className="flex justify-center items-center vh-75">
+        <h1>Loading</h1>
+      </div>
+    ) : (
+      <div className="tc flex flex-column items-center">
+        <h1 className="f1">ROBOFRIENDS</h1>
+        <Filter handleInput={this.handleInput} />
+        <Scroll>
+          <CardList robots={robotsFiltered} />
+        </Scroll>
+      </div>
     );
   }
 }
