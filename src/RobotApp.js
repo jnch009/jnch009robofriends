@@ -17,7 +17,7 @@ class RobotApp extends Component {
     //convert to json then update the state
     //fetch makes a request to a server, available on browsers
     //part of the window object
-    fetch("http://jsonplaceholder.typicode.com/users")
+    fetch("https://jsonplaceholder.typicode.com/users")
       .then((response) => response.json())
       .then((users) => {
         this.setState({ robots: users });
