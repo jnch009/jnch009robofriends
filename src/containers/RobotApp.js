@@ -32,11 +32,12 @@ class RobotApp extends Component {
   };
 
   render() {
-    const robotsFiltered = this.state.robots.filter((robot) =>
-      robot.name.toLowerCase().includes(this.state.search)
+    const { robots, search } = this.state;
+    const robotsFiltered = robots.filter((robot) =>
+      robot.name.toLowerCase().includes(search)
     );
 
-    if (this.state.robots.length === 0) {
+    if (robots.length === 0) {
       return (
         <div className="flex justify-center items-center vh-75">
           <h1>Loading</h1>
