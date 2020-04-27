@@ -37,7 +37,7 @@ class RobotApp extends Component {
       robot.name.toLowerCase().includes(search)
     );
 
-    if (robots.length === 0) {
+    if (!robots.length) {
       return (
         <div className="flex justify-center items-center vh-75">
           <h1>Loading</h1>
