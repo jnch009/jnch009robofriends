@@ -5,51 +5,44 @@ import CardList from '../components/CardList';
 import ErrorBoundry from '../components/ErrorBoundry';
 import Filter from '../components/Filter';
 import Scroll from '../components/Scroll';
-import { setSearchField } from '../actions';
+import { setSearchField, requestRobots } from '../actions';
 
 import './RobotApp.css';
 
 const mapStateToProps = state => {
   return {
-    searchField: state.searchField
-  }
-}
+    searchField: state.searchRobots.searchField,
+    robots: state.requestRobots.robots,
+    isPending: state.requestRobots.isPending,
+    error: state.requestRobots.error,
+  };
+};
 
 const mapDispatchToProps = dispatch => {
   return {
     onSearchChange: event =>
       dispatch(setSearchField(event.target.value.toLowerCase())),
+    onRequestRobots: () => requestRobots(dispatch),
+    //OR higher order version, onRequestRobots: () => dispatch(requestRobots())
   };
-}
+};
 
 //smart component
 class RobotApp extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      robots: [],
-    };
-  }
-
   componentDidMount() {
     //convert to json then update the state
     //fetch makes a request to a server, available on browsers
     //part of the window object
-    fetch('https://jsonplaceholder.typicode.com/users')
-      .then(response => response.json())
-      .then(users => {
-        this.setState({ robots: users });
-      });
+    this.props.onRequestRobots();
   }
 
   render() {
-    const { robots } = this.state;
-    const {searchField, onSearchChange} = this.props;
+    const { searchField, onSearchChange, robots, isPending } = this.props;
     const robotsFiltered = robots.filter(robot =>
       robot.name.toLowerCase().includes(searchField),
     );
 
-    return !robots.length ? (
+    return isPending ? (
       <div className='flex justify-center items-center vh-75'>
         <h1>Loading</h1>
       </div>
