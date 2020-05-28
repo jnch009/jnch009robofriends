@@ -15,8 +15,7 @@ export const requestRobots = dispatch => {
   fetch('https://jsonplaceholder.typicode.com/users', {
     headers: {
       'Access-Control-Allow-Credentials': true,
-      'Access-Control-Allow-Origin':
-        'https://elegant-liskov-e5881a.netlify.app/',
+      'Access-Control-Allow-Origin': process.env.NODE_ENV === "PRODUCTION" ? 'https://elegant-liskov-e5881a.netlify.app/' : 'http://localhost:3000',
     },
   })
     .then(response => response.json())
