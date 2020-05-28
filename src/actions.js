@@ -12,7 +12,13 @@ export const setSearchField = text => ({
 
 export const requestRobots = dispatch => {
   dispatch({ type: REQUEST_ROBOTS_PENDING });
-  fetch('https://jsonplaceholder.typicode.com/users')
+  fetch('https://jsonplaceholder.typicode.com/users', {
+    headers: {
+      'Access-Control-Allow-Credentials': true,
+      'Access-Control-Allow-Origin':
+        'https://elegant-liskov-e5881a.netlify.app/',
+    },
+  })
     .then(response => response.json())
     .then(data => {
       dispatch({
